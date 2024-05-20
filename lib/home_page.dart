@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/global_variables.dart';
+import 'package:shopping_app/product_cart.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -72,8 +74,8 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: Chip(
                         backgroundColor: selectedFilter == filter
-                        ? Theme.of(context).colorScheme.primary
-                        :const Color.fromRGBO(245, 247, 249, 1),
+                            ? Theme.of(context).colorScheme.primary
+                            : const Color.fromRGBO(245, 247, 249, 1),
                         side: const BorderSide(
                           color: Color.fromRGBO(245, 247, 249, 1),
                         ),
@@ -90,6 +92,19 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
+                  );
+                },
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                  return ProductCard(
+                    title: product['title'] as String,
+                    price: product['price'] as double,
+                    image: product['imageUrl'] as String,
                   );
                 },
               ),
