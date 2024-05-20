@@ -26,10 +26,15 @@ class MyApp extends StatelessWidget {
             ),
             prefixIconColor: Color.fromRGBO(119, 119, 119, 1),
           ),
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
             titleMedium: TextStyle(
-              
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
             ),
+            bodySmall: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ) 
           ), 
       ),
       home: const HomePage(),
