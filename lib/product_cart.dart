@@ -27,7 +27,7 @@ class ProductCard extends StatelessWidget {
         children: [
           Text(title, style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 5),
-          Text('\$$price', style: Theme.of(context).textTheme.bodySmall),
+          Text('₹$price', style: Theme.of(context).textTheme.bodySmall),
           const SizedBox(height: 5),
           Center(
             child: Image.asset(image, height: 175),
