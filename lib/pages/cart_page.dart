@@ -51,7 +51,7 @@ class CartPage extends StatelessWidget {
                           TextButton(
                             onPressed: () {
                               context.read<CartProvider>()
-                              .removeProduct(cartItem as int);
+                                .removeProduct(index);
                               Navigator.of(context).pop();
                             },
                             child: const Text(
